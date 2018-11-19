@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	mycollects "mycollections"
+	"mycollections"
 	"mypack" // 必需导入才能被使用
 )
 
@@ -18,7 +18,8 @@ func main() {
 
 	fmt.Println("========== 2. 集合相关实例 ==========")
 	// mycollects.ArraysExamples() // 2.1 数组
-	mycollects.SlicesExamples() // 2.2 切片
+	// mycollects.SlicesExamples() // 2.2 切片
+	mycollections.MappingExamples() // 2.3 映射
 
 	fmt.Println()
 	fmt.Println("--------------- end --------------------") // 分割线
