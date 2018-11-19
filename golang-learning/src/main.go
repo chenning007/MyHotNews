@@ -17,9 +17,11 @@ func main() {
 	fmt.Println()
 
 	fmt.Println("========== 2. 集合相关实例 ==========")
-	mycollects.MyCollects()
+	// mycollects.ArraysExamples() // 2.1 数组
+	mycollects.SlicesExamples() // 2.2 切片
 
+	fmt.Println()
 	fmt.Println("--------------- end --------------------") // 分割线
 
-	fmt.Println("end of golang learing...")
+	fmt.Println("end of golang learning...")
 }

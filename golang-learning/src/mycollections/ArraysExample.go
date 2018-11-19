@@ -6,9 +6,9 @@ func init() {
 
 }
 
-func MyCollects() {
+func ArraysExamples() {
 
-	// 1. 数组专声明和初始化
+	// 1. 数组声明和初始化
 	var array [5]int
 	var array0 = [5]int{}
 	var array1 = [5]int{0, 1, 2, 3, 4}
@@ -33,7 +33,7 @@ func MyCollects() {
 	*array4[0] = 20
 	fmt.Println(*array4[0], array4) // 20 [0xc000018070 0xc000018078 <nil> <nil> <nil>]
 
-	// 数组复制
+	// 3. 数组复制
 	var array5 [2]string
 	var array6 = [2]string{"red", "blue"}
 	fmt.Println(array6) // [red blue]
@@ -43,5 +43,29 @@ func MyCollects() {
 	array5[1] = "yellow"
 	fmt.Println(array5) // [red yellow]
 	fmt.Println(array6) // [red blue]
+
+	// TODO := vs = 赋值的差异
+	// 指针数组
+	var array7 [3]*string
+	array8 := [3]*string{new(string), new(string), new(string)}
+	*array8[0] = "str1"
+	*array8[1] = "str2"
+	*array8[2] = "str3"
+	array7 = array8
+	fmt.Println(array8)     //[0xc0000621d0 0xc0000621e0 0xc0000621f0]
+	fmt.Println(*array7[0]) // str1
+	fmt.Println(*array8[0]) // str1
+	*array7[0] = "str-updated"
+	fmt.Println(*array7[0]) // str-updated
+	fmt.Println(*array8[0]) // str-updated
+
+	// 多维数组
+	var array9 = [2][3]int{{1, 1}, {2, 2}}
+	fmt.Println(array9) // [[1 1 0] [2 2 0]]
+	// TODO
+	// var array10 = [2][3]int{1:{1,1}, 2:{2,2}}
+
+	// 大数组的数据复制在函数调用时有性能问题
+	// 更好的方式是通过地址传递给函数
 
 }
